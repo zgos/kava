@@ -37,8 +37,8 @@ message MultiRewardPeriod {
       [(gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
 }
 
-// MultiRewardPeriodOfClaimType stores mutiple reward types of a claim type
-message MultiRewardPeriodOfClaimType {
+// TypedMultiRewardPeriod stores mutiple reward types of a claim type
+message TypedMultiRewardPeriod {
   ClaimType                  claim_type     = 1;
   repeated MultiRewardPeriod reward_periods = 2
       [(gogoproto.castrepeated) = "MultiRewardPeriods", (gogoproto.nullable) = false];
@@ -91,6 +91,6 @@ message Params {
   repeated MultiRewardPeriod earn_reward_periods = 9
       [(gogoproto.castrepeated) = "MultiRewardPeriods", (gogoproto.nullable) = false];
 
-  repeated MultiRewardPeriodOfClaimType reward_periods = 10
-      [(gogoproto.castrepeated) = "MultiRewardPeriodsOfClaimType", (gogoproto.nullable) = false];
+  repeated TypedMultiRewardPeriod reward_periods = 10
+      [(gogoproto.castrepeated) = "TypedMultiRewardPeriods", (gogoproto.nullable) = false];
 }
